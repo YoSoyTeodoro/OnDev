@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0%;
+    padding: 0%;
     box-sizing: border-box;
 }
 body{
@@ -13,6 +13,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     font-family: "Montserrat";
+   
 }
 nav{
     background-color: white;
@@ -92,28 +93,29 @@ nav li:first-child{
 
 
 /*Carousel*/
+
 .body-carousel {
-  height: 60vh;
+  height: 90vh;
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 
 main {
   position: relative;
-  width: 80%;
-  height: 80%;
-  border-radius: 30%;
+  width: 100%;
+  height: 100%;
   box-shadow: 0 3px 10px rgba(0,0,0,0.3);
 }
 
 .item {
-  width: 15%;
-  height: 80%;
+  width: 200px;
+  height: 300px;
   list-style-type: none;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 5;
+  z-index: 1;
   background-position: center;
   background-size: cover;
   border-radius: 20px;
@@ -140,13 +142,12 @@ main {
 .content {
   width: min(30vw,400px);
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 3rem;
   transform: translateY(-50%);
   font: 400 0.85rem helvetica,sans-serif;
-  color: rgb(255, 255, 255);
-  text-decoration: wavy;
-  text-shadow: 0 5px 8px rgba(0,0,0,0.5);
+  color: white;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.5);
   opacity: 0;
   display: none;
 
@@ -159,6 +160,7 @@ main {
     line-height: 1.7;
     margin: 1rem 0 1.5rem;
     font-size: 0.8rem;
+    text-shadow: #212121;
   }
 
   & button {
@@ -173,9 +175,10 @@ main {
 }
 
 .item:nth-of-type(2) .content {
-  display: block;
-  animation: show 0.75s ease-in-out 0.3s forwards;
+display: block;
+animation: show 0.75s ease-in-out 0.3s forwards;
 }
+
 
 @keyframes show {
   0% {
@@ -190,16 +193,16 @@ main {
 
 .nav {
   position: absolute;
-  bottom: 1rem;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
   user-select: none;
-  background:scroll;
-  background-image: none;
+  background-color: transparent; /* Ajuste o último valor para controlar a transparência */
+
 
   & .btn {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-image: none;
     color: rgba(0,0,0,0.7);
     border: 2px solid rgba(0,0,0,0.6);
     margin: 0 0.20rem;
@@ -208,10 +211,11 @@ main {
     cursor: pointer;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: rgba(255,255,255,0.3);
     }
   }
 }
+
 
 
 @media (width > 650px) and (width < 900px) {
@@ -260,175 +264,201 @@ main {
   margin: 2%;
   align-items: center;
   text-align: center;
-  background: #3B5998;
+  background-color: white;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*Container OnDev About*/
 
 
+
+/*Colaboradores*/
+
+
+.box{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+  align-self: center;
+}
+
+
+.ficha {
+  margin: 20px 40px 40px 20px;
+  width: 300px;
+  height: 400px;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  transition: 0.5s;
+}
+
+.box .frente {
+  border: solid 10px whitesmoke;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: 0.5s;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.box :hover .frente {
+  transform: rotateY(-180deg);
+}
+
+.box .tras {
+  border: solid 10px whitesmoke;
+  width: 100%;
+  height: 100%;
+  background: #1d1d1d;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  transition: 0.5s;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+
+}
+
+.box :hover .tras {
+  transform: rotateY(0deg);
+}
+
+.box .tras .detalhes {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.box .tras .detalhes .texto {
+  font-weight: 100;
+  font-style: italic;
+}
+
+.box .tras .detalhes .texto,
+h2,
+span {
+  color: whitesmoke;
+}
+
+.social-icon {
+  padding: 10px;
+}
+
+.social-icon a {
+  display: inline-block;
+  width: 36px;
+  background: #333;
+  text-align: center;
+  text-decoration: none;
+  color: whitesmoke;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.social-icon a .fab {
+  line-height: 36px;
+}
+
+.social-icon a:hover {
+  background: rgb(104, 240, 215);
+}
+
+.social-icon a:hover i {
+  transition: 0.5s;
+  color: #333;
+}
+/*Colaboradores*/
+
+
 /*Cards*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+section {
+  height: 80vh;
+  display: flex;
+  padding: 0 4em;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #1e1c1c;
 }
 
-.container{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 100px 50px;
-    padding: 100px 50px;
+.container {
+  perspective: 1000px;
+  height: 28vh;
+  width: 100%;
+  cursor: pointer;
 }
-
-.container .card {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    width: 350px;
-    max-width: 100%;
-    height: 300px;
-    background: white;
-    border-radius: 20px;
-    transition: 0.5s;
-    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+.card {
+  transform-style: preserve-3d;
+  height: 100%;
+  width: 100%;
+  transition: 0.5s ease;
 }
-
-.container .card:hover {
-    height: 400px;
-    cursor: pointer;
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0.4em;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  backface-visibility: hidden;
 }
-
-.container .card .img-box {
-    position: absolute;
-    top: 20px;
-    width: 300px;
-    height: 220px;
-    background: #333;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: 0.5s;
+.front {
+  background: linear-gradient(to right, #a246ef, #6523fe);
 }
-
-.container .card:hover .img-box {
-    top: -100px;
-    scale: 0.75;
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+.front img {
+  width: 5em;
 }
-
-.container .card .img-box img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.conteudo {
+  transform: translateZ(60px);
 }
-
-.container .card .content {
-    position: absolute;
-    top: 252px;
-    width: 100%;
-    height: 35px;
-    padding: 0 30px;
-    text-align: center;
-    overflow: hidden;
-    transition: 0.5s;
+.content h3 {
+  font-size: 2px;
+  margin-top: 1em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
-
-.container .card:hover .content {
-    top: 130px;
-    height: 250px;
+.content p {
+  font-size: 2px;
+  line-height: 2em;
+  letter-spacing: 0.01em;
+  padding: 0 1em;
 }
-
-.container .card .content h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--clr);
+.back {
+  background-color: #28253a;
+  transform: rotateX(180deg);
 }
-
-.container .card .content p {
-    color: #333;
+.container:hover .card {
+  transform: rotateX(180deg);
 }
-
-.container .card .content a {
-    position: relative;
-    top: 15px;
-    display: inline-block;
-    padding: 12px 25px;
-    text-decoration: none;
-    background: var(--clr);
-    color: white;
-    font-weight: 500;
+@media screen and (min-width: 992px) {
+  section {
+    padding: 0 1em;
+  }
+  .container {
+    flex-basis: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 0 1.5em;
+  }
 }
-
-.container .card .content a:hover {
-    opacity: 0.8;
-}
-
-@media (max-width: 480px) {
-    .container .card {
-        width: 230px;
-        border-radius: 15px;
-    }
-
-    .container .card .img-box {
-        width: 185px;
-        border-radius: 10px;
-    }
-
-    .container .card .content p {
-        font-size: 0.8rem;
-    }
-
-    .container .card .content a {
-        font-size: 0.9rem;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*Cards*/
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
@@ -468,50 +498,35 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.social-icon {
+  padding: 10px;
+}
 
-.fa {
+.social-icon a {
   display: inline-block;
-  padding: auto;
-  height: 40px;
-  width: 40px;
-  margin: 0 10px 10px 0;
+  width: 36px;
+  background: #333;
   text-align: center;
-  line-height: 40px;
+  text-decoration: none;
+  color: whitesmoke;
   border-radius: 50%;
-  transition: all 0.5s ease;
-}
-.fa:hover {
-  opacity: 0.7;
-}
-.fa-facebook {
-  background: #3B5998;
-  color: white;
-  padding-top: 6%;
-  text-decoration: none;
+  transition: 0.5s;
 }
 
-.fa-twitter {
-  background: #55ACEE;
-  color: white;
-  padding-top: 6%;
-  text-decoration: none;
+.social-icon a .fab {
+  line-height: 36px;
 }
 
-.fa-instagram{
-  background: rgb(181, 33, 0);
-  color: white;
-  padding-top: 6%;
-  text-decoration: none;
+.social-icon a:hover {
+  background: rgb(104, 240, 215);
 }
 
-.fa-whatsapp{
-  background: #32cd32;
-  color: white;
-  padding-top: 6%;
-  text-decoration: none;
+.social-icon a:hover i {
+  transition: 0.5s;
+  color: #333;
 }
 
-.container {
+.container-footer {
   max-width: 1180px;
   margin: auto;
 }
