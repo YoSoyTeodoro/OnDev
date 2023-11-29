@@ -64,7 +64,7 @@ body {
 	font-size: 1.6rem;
   font-family: "Montserrat";
 	color: #2d3d4f;
-	background-color: #1bbc9d;
+	background-color: #a1c2ff;
 }
 
 a {
@@ -367,7 +367,7 @@ a {
 }
 
 .exclusive .pricing-header {
-    color: #1bbc9d;
+    color: #a1c2ff;
     background-color: transparent;
 }
 
@@ -385,7 +385,7 @@ a {
 .duration {
 	font-weight: 700;
 	font-size: 1.3rem;
-	color: #8dc8e4;
+	color: #a1c2ff;
 	text-transform: uppercase;
 }
 
@@ -405,7 +405,7 @@ a {
 
 .currency, 
 .duration {
-    color: #1bbc9d;
+    color: #a1c2ff;
 }
 
 .exclusive .currency,
@@ -528,9 +528,9 @@ a {
     display: inline-block;
     height: auto;
     padding: 1.3em 2em;
-    color: #1bbc9d;
+    color: #a1c2ff;
     border-radius: 8px;
-    border: 2px solid #1bbc9d;
+    border: 2px solid #a1c2ff;
     font-size: 1.4rem;
     text-indent: 0;
     text-transform: uppercase;
@@ -540,21 +540,21 @@ a {
 }
 
 .no-touch .select:hover {
-    background-color: #1bbc9d;
+    background-color: #a1c2ff;
 	color: #ffffff;
 }
 
 .exclusive .select {
-    background-color: #1bbc9d;
+    background-color: #a1c2ff;
 	color: #ffffff;
 }
   
 .no-touch .exclusive .select:hover {
-    background-color: #24e0ba;
+    background-color: #a1c2ff;
 }
   
 .secondary-theme .exclusive .select {
-    background-color: #1bbc9d;
+    background-color: #a1c2ff;
 }
   
 .no-touch .secondary-theme .exclusive .select:hover {
