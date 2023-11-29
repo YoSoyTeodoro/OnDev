@@ -12,7 +12,7 @@ function abrirModal() {
   }
 
   function developerCad(){
-    window.location.href = '/caddeveloper.html';
+    window.location.href = '/sectioncad.html';
   }
 
   // Fechar o modal ao clicar fora dele
